@@ -1,0 +1,146 @@
+	eventid	 		标志号 = 前8位记录日期，采用“yyyymmdd”格式，后4位标定一天中的序列号（0001，0002等）
+	iyear    		年
+	imonth			月
+	iday			日
+	approxdate		大概日期 
+extended		是否为持续事件    1 =“是”事件的持续时间达到24个小时以上。 0 =“否”事件的持续时间不到 24小时。
+	resolution		持续事件的解决日期
+	country			国家代码
+	country_txt		国家名
+	region			地区代码
+	region_txt		地区名
+	provstate		省/行政区/州名
+city			城市名
+	latitude		维度
+	longitude		经度
+	specificity		地理编码特征 该字段指出了经纬度的地理空间分辨率。 1=事件发生在城市/乡村/镇，经纬度就是那个位置  5=没有可被识别的第一级行政区可以与恐怖袭击的地点相对应，所以经纬度是未知的。 
+	vicinity		附近地区
+	location		位置描述 位置的附加描述
+	summary			事件摘要
+crit1			标准1：政治、经济、宗教或社会目标 			0,1				0~3
+crit2			标准2：意图胁迫、恐吓或煽动更多的群众		0,1
+crit3			标准3：超出国际人道主义法律范围				0,1
+	doubtterr		疑似恐怖主义   1 =“是”怀疑该事件是恐怖主义行为。 0 =“否”基本上不怀疑该事件是恐怖主义行为。
+	alternative		其它：这个变量只适用于那些“疑似恐怖主义”编码为“是”的案例。这个变量对恐怖主义之外的事件尽可能的进行了分类。 1）叛乱/游击队行动； 2）其他犯罪类型；3）群体内/间冲突；4）缺乏意向性； 5）政府组织（2012年后系统的编码）
+	alternative_txt	其他里边的具体分类名称
+multiple		就是表示这个事件是不是一个恐怖袭击事件组中的其中一个事件，如果是为1，不是为0
+success			成功的攻击  1 =“是”这一事件是成功的  0 =“否”这一事件不成功的。
+suicide			自杀式袭击  1 =“是”这一事件是自杀式袭击
+	attacktype1		攻击类型 1~9
+	attacktype1_txt	具体类型
+	attacktype2		攻击类型 1~9
+	attacktype2_txt	具体类型
+	attacktype3		攻击类型 1~9
+	attacktype3_txt 具体类型
+	
+---------------------------------------------------------	
+	targtype1		目标/受害者类型 1~22
+	targtype1_txt	具体类型
+	targsubtype1	目标/受害者子类型	1~111
+	targsubtype1_txt具体类型	
+	corp1			实体名称 	这是企业实体或有针对性的政府机构的名称。如果未指明有针对性的元素，则列为“未知”。如果没有特定的针对性性实体，记录为“不适用”。
+	target1			具体目标/受害者  这是具体的人、建筑、设施等等，这是以上有针对性的实体的一部分。（举例来说，如果美国大使馆在××国家被攻击，则“实体的名称”将是“美国国务院”，“具体目标/受害者”将是“美国大使馆”）。如果受害者的名字是已知的，他们将被列在特定目标类型的前面（例如：平民、士兵、军官）。
+	natlty1			目标/受害者的国籍代码
+	natlty1_txt		具体国家
+	
+	targtype2		第二目标/受害者类型
+	targtype2_txt	
+	targsubtype2	第二目标/受害者子类型	
+	targsubtype2_txt
+	corp2			第二实体名称
+	target2			第二目标/受害者的国籍
+	natlty2			第二目标/受害者的国籍代码
+	natlty2_txt		第二目标/具体国家
+	
+	targtype3			
+	targtype3_txt
+	targsubtype3
+	targsubtype3_txt
+	corp3
+	target3
+	natlty3
+	natlty3_txt
+----------------------------------------------------------	
+	
+	gname			犯罪集团的名称  	不知道就是unknown
+	gsubname		犯罪子集团名称  	本字段包含任何额外的，或实施袭击的组织名称的相关细节。这包括但不限于可用的特定派别的名称。
+	gname2			第二犯罪集团名称	这个字段是用来记录当攻击的凶手超过一个时，第二个凶手的名称。约定遵循“犯罪集团”字段。
+	gsubname2		第二犯罪子集团名称
+	gname3			第三犯罪集团名称
+	gsubname3		第三犯罪子集团名称	
+	motive			动机	一串文字
+	guncertain1		第一可疑/涉嫌犯罪集团  这个变量说明了关于犯罪集团名称的来源的信息是否是基于猜测或可疑的对事件声称的负责。 1 =“是”事件凶手的归属是可疑的。 0 =“否”事件凶手的归属是确定的。
+	guncertain2		对应上面的第二犯罪集团	
+	guncertain3		对应上面的第三犯罪集团
+	individual		是否是个人所为
+nperps			凶手数量  不知道就是-99
+nperpcap		抓获的凶手数量   当有证据显示凶手被捕获，但数量没有报道时，就出现“‐99”或“未知”。
+	
+----------------------------------------------------------		
+	claimed			声称负责 1=“是”一个组织或个人声称对袭击负责。
+	claimmode		声称负责的模式	10种模式，见附加说明
+	claimmode_txt	具体的模式
+	claim2			声称负责的第二组织	
+	claimmode2		声称负责的模式	10种模式，见附加说明
+	claimmode2_txt	具体的模式
+	claim3			声称负责的第二组织
+	claimmode3		声称负责的模式	10种模式，见附加说明
+	claimmode3_txt	具体的模式
+	compclaim		争相负责的声明 	如果被标记为“是”，它表明，涉及该案件的组织都声称对攻击负责
+----------------------------------------------------------	
+	
+	weaptype1		武器类型 1~13
+	weaptype1_txt
+	weapsubtype1
+	weapsubtype1_txt
+	weaptype2
+	weaptype2_txt
+	weapsubtype2
+	weapsubtype2_txt
+	weaptype3
+	weaptype3_txt
+	weapsubtype3
+	weapsubtype3_txt
+	weaptype4
+	weaptype4_txt
+	weapsubtype4
+	weapsubtype4_txt
+	weapdetail		武器细节 一串文字
+	
+nkill			死亡总数
+	nkillus			美国死亡人数
+	nkillter		凶手死亡人数
+nwound			受伤总数
+	nwoundus		美国受伤人数	
+	nwoundte		凶手受伤人数	
+property		财产损害 1 =“是”事件导致财产损失。 0 =“否”事件并没有造成财产损失。 ‐9 =“未知”不知道事件是否造成财产损失。
+propextent		财产损害程度 1~4    1=灾难性的（可能大于 10亿美元） 
+	propextent_txt	详细信息
+propvalue		财产损失的价值（美元）
+	propcomment		财产损失评价 一串文字
+ishostkid		人质或绑架的受害者   1 =“是”受害者被劫持人质或被绑架。 0 =“否”受害者没有被劫持或绑架。 ‐9 =“未知”不知道受害人是否被劫持或绑架。
+nhostkid		人质/绑架受害者总数  未知为-99
+	nhostkidus		美国人质或绑架受害者
+	nhours			人质/绑架事件的小时数
+	ndays			人质/绑架事件的天数
+	divert			绑匪/劫匪转移到的国家  国家名
+	kidhijcountry
+	ransom			索要赎金  1 =“是”这一事件涉及了货币赎金的要求。 0 =“否”这一事件并没有涉及货币赎金的要求。 ‐9 =“未知”不知道事件是否涉及货币赎金的要求。  很多是空的！要用需要自己补上去
+	ransomamt		总索取赎金	 如果有索要赎金，那么该字段将列出金额（美元）
+	ransomamtus		来自美国的信息源的赎金索取金额
+	ransompaid		赎金支付总额  未知-99
+	ransompaidus	由美国来源支付的赎金金额	
+	ransomnote		赎金笔记
+hostkidoutcome	绑架/人质结果 1~7
+	hostkidoutcome_txt	具体值
+	nreleased		释放/逃脱/获救的数量
+	addnotes		附加说明
+	scite1			第一引用来源
+	scite2			第二引用来源
+	scite3			第三引用来源
+	dbsource		数据收集  组织名字
+	INT_LOG			国际后勤 1表示跨国攻击，0表示国内攻击，-9表示不知道
+	INT_IDEO		国际的意识形态
+	INT_MISC		国际杂类
+	INT_ANY			国际‐以上任意一类
+	related			相关事件
